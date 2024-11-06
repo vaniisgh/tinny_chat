@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  qabot:
+    build: .
+    container_name: qabot
+    ports:
+      - "8080:8080"
+    depends_on:
+      - chromadb
+      - ollama
+      - ollama-models-pull
+    volumes:
+      - .:/app
+
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: chromadb
+    environment:
+      - PORT=8000
+    ports:
+      - "8000:8000"
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    healthcheck:
+      test: ollama list || exit 1
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 10s
+
+  ollama-models-pull:
+    container_name: ollama-models-pull
+    image: curlimages/curl:latest
+    command: >
+      http://ollama:11434/api/pull -d '{"name":"tinyllama"}'
+    depends_on:
+      ollama:
+        condition: service_healthy
+
+volumes:
+  ollama-data:
