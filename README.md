@@ -1,6 +1,8 @@
 ## Tinny QA bot
 
-![Logo](./docs/logo.jpg)
+<p align="center">
+  <img src="./docs/logo.jpg" alt="Logo" width="200"/>
+</p>
 
 A completely local solution to querying your doccuments, it has a single endpoint
     - /query_document
@@ -22,6 +24,7 @@ slower response and pulling the model also takes some time.
 docker compose up --build -d
 ```
 
+for more instructions refer to [screenshots](./additional_screenshots.md)
 
 ## Running without docker
 
