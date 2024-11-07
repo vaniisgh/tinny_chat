@@ -6,9 +6,7 @@ the llm and prompt from the main.py file.
 
 use the /docs endpoint of fastapi to see the required input and output parameters.
 
-use any pdf file, or a json in the example format in sample_data.json[[./sample_data.json]]
- as the input
-doccument, and send the questions in the sample_questions.json[[./sample_questions.json]] format.
+Use any PDF file, or a JSON in the example format in [sample_data.json](./sample_data.json) as the input document, and send the questions in the [sample_questions.json](./sample_questions.json) format.
 
 
 ### Run the dockerised application
