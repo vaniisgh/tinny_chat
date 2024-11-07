@@ -1,4 +1,7 @@
 ## Tinny QA bot
+
+![Logo](./docs/logo.jpg)
+
 A completely local solution to querying your doccuments, it has a single endpoint
     - /query_document
 that helps you query a doccument using a llm ( by default tinyllama), you can modify
@@ -7,6 +10,10 @@ the llm and prompt from the main.py file.
 use the /docs endpoint of fastapi to see the required input and output parameters.
 
 Use any PDF file, or a JSON in the example format in [sample_data.json](./sample_data.json) as the input document, and send the questions in the [sample_questions.json](./sample_questions.json) format.
+
+
+Note: every query runs a separate `invoke` for the model, more queries 
+slower response and pulling the model also takes some time.
 
 
 ### Run the dockerised application
