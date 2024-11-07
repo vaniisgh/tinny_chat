@@ -202,7 +202,7 @@ def process_questions(question_list, documents, model):
 app = FastAPI(lifespan=lifespan)
 
 
-@app.post("/documents/")
+@app.post("/query_document/")
 async def add_document(file: UploadFile = File(...), questions: UploadFile = File(...)) -> Response:
     """
     FastAPI endpoint to process uploaded documents and answer questions

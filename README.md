@@ -20,10 +20,12 @@ docker compose up --build -d
 
 ## Running without docker
 
-you need the following services to run the qa bot
-    - chroma db
-    - ollama docker container
-    - this service
+You need the following services to run the QA bot:
+- Chroma DB
+- Ollama Docker container
+- This service
+
+You  can use the steps below to start the server
 
 ```shell
 cd path/to/this/repo
